@@ -16,7 +16,7 @@
         <!-- Action buttons -->
         
         <TextBlock Grid.Row="1" Grid.Column="0" 
-                   FontFamily="Arial" FontSize="30" TextAlignment="Center" VerticalAlignment="Center">
+                   FontFamily="Arial" TextAlignment="Center" VerticalAlignment="Center" Padding="10">
             <Run>
                 ** Clear All Orders **
             </Run>
