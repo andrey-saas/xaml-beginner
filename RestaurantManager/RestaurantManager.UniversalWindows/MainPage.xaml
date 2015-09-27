@@ -13,6 +13,9 @@
             <RowDefinition Height="40*" />
             <RowDefinition Height="30*" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
         
         <!-- Application title -->
         

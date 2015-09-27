@@ -12,6 +12,9 @@
             <RowDefinition Height="85*" />
             <RowDefinition Height="15*" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
         
         <!-- Action buttons -->
         
