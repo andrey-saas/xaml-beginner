@@ -5,10 +5,14 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     RequestedTheme="Light">
     <Application.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="Black" />
+        </Style>
         <Style TargetType="Button">
             <Setter Property="FontSize" Value="32" />
         </Style>
         <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
             <Setter Property="FontSize" Value="32" />
         </Style>
     </Application.Resources>
