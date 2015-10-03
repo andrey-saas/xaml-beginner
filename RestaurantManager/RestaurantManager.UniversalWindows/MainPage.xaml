@@ -39,18 +39,10 @@
                 <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="50*" />
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" 
-                       FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Padding="50">
-                <Run>
-                    ** Go to Orders View **
-                </Run>
-            </TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="1" 
-                       FontFamily="Arial" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Padding="50">
-                <Run>
-                    ** Submit Order **
-                </Run>
-            </TextBlock>
+            <Button x:Name="OrdersViewButton"  Grid.Row="0" Grid.Column="0" Content="Go to Orders View"
+                    VerticalAlignment="Center" HorizontalAlignment="Center" Click="OrdersViewButton_Click" />
+            <Button x:Name="SubmitButton" Grid.Row="0" Grid.Column="1" Content="Submit Order" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center" Click="SubmitButton_Click" />
         </Grid>
     </Grid>
 </Page>
