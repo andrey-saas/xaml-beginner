@@ -10,6 +10,8 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="FontSize" Value="32" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="Gray" />
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="White" />
