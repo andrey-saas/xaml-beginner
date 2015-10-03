@@ -9,20 +9,27 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="85*" />
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="70*" />
             <RowDefinition Height="15*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         
+        <!-- Application Bar -->
+
+        <AppBar Grid.Row="0" Grid.Column="0">
+            <AppBarButton x:Name="HomeButton" Icon="Home" Label="Home" Click="HomeButton_Click" />
+        </AppBar>
+        
+        <!-- Orders list -->
+        
+        <GridView Grid.Row="1" Grid.Column="0" />
+        
         <!-- Action buttons -->
         
-        <TextBlock Grid.Row="1" Grid.Column="0" 
-                   FontFamily="Arial" TextAlignment="Center" VerticalAlignment="Center" Padding="10">
-            <Run>
-                ** Clear All Orders **
-            </Run>
-        </TextBlock>
+        <Button x:Name="ClearOrdersButton" Grid.Row="2" Grid.Column="0" Content="Clear All Orders"
+                VerticalAlignment="Center" HorizontalAlignment="Center" />
     </Grid>
 </Page>
