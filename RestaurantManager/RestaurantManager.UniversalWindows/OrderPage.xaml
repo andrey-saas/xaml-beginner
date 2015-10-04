@@ -7,22 +7,28 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Style="{StaticResource GridStyle}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="15*" />
-            <RowDefinition Height="70*" />            
-            <RowDefinition Height="15*" />
-        </Grid.RowDefinitions>
-        
-        <!-- Application Bar -->
-
-        <AppBar Grid.Row="0" Grid.Column="0">
+    <!-- Application Bar -->
+    
+    <Page.TopAppBar>
+        <AppBar Style="{StaticResource AppBarStyle}">
             <AppBarButton x:Name="HomeButton" Icon="Home" Label="Home" Click="HomeButton_Click" />
         </AppBar>
+    </Page.TopAppBar>
+    
+    <!-- Page contents -->    
+    
+    <Grid Style="{StaticResource GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*" />            
+            <RowDefinition Height="15*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
         
         <!-- Order Details -->
         
-        <Grid Grid.Row="1" Grid.Column="0">
+        <Grid Grid.Row="0" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="25*" />
@@ -50,7 +56,7 @@
         
         <!-- Action buttons -->
         
-        <Grid Grid.Row="2" Grid.Column="0">
+        <Grid Grid.Row="1" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="50*" />

@@ -5,6 +5,9 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     RequestedTheme="Light">
     <Application.Resources>
+        <Style x:Key="AppBarStyle" TargetType="AppBar">
+            <Setter Property="Background" Value="Gray" />            
+        </Style>
         <Style x:Key="GridStyle" TargetType="Grid">
             <Setter Property="Background" Value="Black" />
         </Style>
