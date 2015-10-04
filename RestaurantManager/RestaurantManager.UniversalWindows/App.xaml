@@ -5,7 +5,7 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     RequestedTheme="Light">
     <Application.Resources>
-        <Style TargetType="Grid">
+        <Style x:Key="GridStyle" TargetType="Grid">
             <Setter Property="Background" Value="Black" />
         </Style>
         <Style TargetType="Button">
