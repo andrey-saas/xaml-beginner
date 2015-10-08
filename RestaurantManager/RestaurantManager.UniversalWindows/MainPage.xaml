@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Style="{StaticResource GridStyle}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30*" />
             <RowDefinition Height="40*" />
@@ -20,12 +20,12 @@
         <!-- Application title -->
         
         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
-            <TextBlock FontFamily="Arial" FontSize="50" TextAlignment="Center" VerticalAlignment="Center" Padding="20">
+            <TextBlock Style="{StaticResource TitleStyle}" TextAlignment="Center" VerticalAlignment="Center" Padding="20">
                 <Run>
                     Restaurant Manager
                 </Run>
             </TextBlock>
-            <TextBlock FontFamily="Arial" FontSize="30" TextAlignment="Center" VerticalAlignment="Center" Padding="20">
+            <TextBlock Style="{StaticResource VersionStyle}" TextAlignment="Center" VerticalAlignment="Center" Padding="20">
                 <Run>
                     Internal Test Version
                 </Run>

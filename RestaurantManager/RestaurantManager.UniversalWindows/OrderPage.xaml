@@ -6,18 +6,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
     <!-- Application Bar -->
     
     <Page.TopAppBar>
-        <AppBar Style="{StaticResource AppBarStyle}">
+        <AppBar>
             <AppBarButton x:Name="HomeButton" Icon="Home" Label="Home" Click="HomeButton_Click" />
         </AppBar>
     </Page.TopAppBar>
     
     <!-- Page contents -->    
     
-    <Grid Style="{StaticResource GridStyle}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="85*" />            
             <RowDefinition Height="15*" />
@@ -39,19 +39,21 @@
                 <RowDefinition Height="90*" />
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="1"
-                       FontFamily="Arial" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="5">
+                       Style="{StaticResource HeadingStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="5">
                 <Run>
                     Special Requests:
                 </Run>
             </TextBlock>
             <TextBlock Grid.Row="0" Grid.Column="2"
-                       FontFamily="Arial" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="5">
+                       Style="{StaticResource HeadingStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="5">
                 <Run>
                     Order Items:
                 </Run>
             </TextBlock>
-            <ListView Grid.Row="1" Grid.Column="0" />            
-            <ListView Grid.Row="1" Grid.Column="2" />
+            <ListView Grid.Row="1" Grid.Column="0" DataContext="{StaticResource DataManager}"
+                      ItemsSource="{Binding Path=MenuItems, FallbackValue='Invalid property', Mode=OneWay}" />            
+            <ListView Grid.Row="1" Grid.Column="2" DataContext="{StaticResource DataManager}"
+                      ItemsSource="{Binding Path=CurrentlySelectedMenuItems, FallbackValue='Invalid property', Mode=OneWay}" />
         </Grid>
         
         <!-- Action buttons -->

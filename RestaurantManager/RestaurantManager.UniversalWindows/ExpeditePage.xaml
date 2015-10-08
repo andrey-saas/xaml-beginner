@@ -6,18 +6,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+  
     <!-- Application Bar -->
 
     <Page.TopAppBar>
-        <AppBar Style="{StaticResource AppBarStyle}">
+        <AppBar>
             <AppBarButton x:Name="HomeButton" Icon="Home" Label="Home" Click="HomeButton_Click" />
         </AppBar>
     </Page.TopAppBar>
     
     <!-- Page contents -->
-    
-    <Grid Style="{StaticResource GridStyle}">
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="85*" />
             <RowDefinition Height="15*" />
@@ -27,12 +27,13 @@
         </Grid.ColumnDefinitions>
                 
         <!-- Orders list -->
-        
-        <GridView Grid.Row="1" Grid.Column="0" />
-        
+
+        <GridView Grid.Row="0" Grid.Column="0" DataContext="{StaticResource DataManager}"
+                  ItemsSource="{Binding Path=OrderItems, FallbackValue='Invalid property', Mode=OneWay}" />
+
         <!-- Action buttons -->
         
-        <Button x:Name="ClearOrdersButton" Grid.Row="2" Grid.Column="0" Content="Clear All Orders"
+        <Button x:Name="ClearOrdersButton" Grid.Row="1" Grid.Column="0" Content="Clear All Orders"
                 VerticalAlignment="Center" HorizontalAlignment="Center" />
     </Grid>
 </Page>
