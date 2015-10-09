@@ -50,9 +50,9 @@
                     Order Items:
                 </Run>
             </TextBlock>
-            <ListView Grid.Row="1" Grid.Column="0" DataContext="{StaticResource DataManager}"
+            <ListView x:Name="MenuListView" Grid.Row="1" Grid.Column="0" DataContext="{StaticResource DataManager}"
                       ItemsSource="{Binding Path=MenuItems, FallbackValue='Invalid property', Mode=OneWay}" />            
-            <ListView Grid.Row="1" Grid.Column="2" DataContext="{StaticResource DataManager}"
+            <ListView x:Name="SelectedListView" Grid.Row="1" Grid.Column="2" DataContext="{StaticResource DataManager}"
                       ItemsSource="{Binding Path=CurrentlySelectedMenuItems, FallbackValue='Invalid property', Mode=OneWay}" />
         </Grid>
         
@@ -64,9 +64,9 @@
                 <ColumnDefinition Width="50*" />
             </Grid.ColumnDefinitions>
             <Button x:Name="AddToOrderButton" Grid.Row="0" Grid.Column="0" Content="Add to Order"            
-                    VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    VerticalAlignment="Center" HorizontalAlignment="Center" Click="AddToOrderButton_Click"/>
             <Button x:Name="SubmitButton" Grid.Row="0" Grid.Column="1" Content="Submit Order"            
-                    VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    VerticalAlignment="Center" HorizontalAlignment="Center" Click="SubmitButton_Click" />
         </Grid>
     </Grid>
 </Page>

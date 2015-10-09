@@ -28,12 +28,12 @@
                 
         <!-- Orders list -->
 
-        <GridView Grid.Row="0" Grid.Column="0" DataContext="{StaticResource DataManager}"
+        <GridView x:Name="OrdersGridView" Grid.Row="0" Grid.Column="0" DataContext="{StaticResource DataManager}"
                   ItemsSource="{Binding Path=OrderItems, FallbackValue='Invalid property', Mode=OneWay}" />
 
         <!-- Action buttons -->
         
         <Button x:Name="ClearOrdersButton" Grid.Row="1" Grid.Column="0" Content="Clear All Orders"
-                VerticalAlignment="Center" HorizontalAlignment="Center" />
+                VerticalAlignment="Center" HorizontalAlignment="Center" Click="ClearOrdersButton_Click" />
     </Grid>
 </Page>
