@@ -35,7 +35,7 @@ namespace RestaurantManager.UniversalWindows
 
         private void ClearOrdersButton_Click(object sender, RoutedEventArgs e)
         {
-            DataManager dataManager = DataManager.GetDataManager();
+            DataManager dataManager = DataContext as DataManager;
             dataManager.OrderItems.Clear();
         }
     }

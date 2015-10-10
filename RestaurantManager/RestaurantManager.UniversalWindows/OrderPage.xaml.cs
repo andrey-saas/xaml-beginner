@@ -37,7 +37,7 @@ namespace RestaurantManager.UniversalWindows
         {
             if (MenuListView.SelectedItem != null)
             {
-                DataManager dataManager = DataManager.GetDataManager();
+                DataManager dataManager = DataContext as DataManager;
                 string selectedItem = MenuListView.SelectedItem as string;
                 if (!dataManager.CurrentlySelectedMenuItems.Contains(selectedItem))
                     dataManager.CurrentlySelectedMenuItems.Add(selectedItem);
@@ -48,7 +48,7 @@ namespace RestaurantManager.UniversalWindows
         {
             if (SelectedListView.Items.Count > 0)
             {
-                DataManager dataManager = DataManager.GetDataManager();
+                DataManager dataManager = DataContext as DataManager;
                 dataManager.OrderItems.Add(string.Join(", ", SelectedListView.Items));
                 dataManager.CurrentlySelectedMenuItems.Clear();
             }

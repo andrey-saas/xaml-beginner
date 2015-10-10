@@ -11,9 +11,6 @@ namespace RestaurantManager.Models
     {
         public DataManager()
         {
-            if (dataManager == null)
-                dataManager = this;
-
             OrderItems = new ObservableCollection<string>(
                 new List<string>
                 {
@@ -40,15 +37,8 @@ namespace RestaurantManager.Models
             };
         }
 
-        public static DataManager GetDataManager()
-        {
-            return dataManager;
-        }
-
         public ObservableCollection<string> OrderItems { get; set; }
         public List<string> MenuItems { get; set; }
         public ObservableCollection<string> CurrentlySelectedMenuItems { get; set; }
-
-        private static DataManager dataManager = null;
     }
 }

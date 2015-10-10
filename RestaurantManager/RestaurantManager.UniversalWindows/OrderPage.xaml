@@ -5,7 +5,8 @@
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    DataContext="{StaticResource DataManager}">
     
     <!-- Application Bar -->
     
@@ -50,9 +51,9 @@
                     Order Items:
                 </Run>
             </TextBlock>
-            <ListView x:Name="MenuListView" Grid.Row="1" Grid.Column="0" DataContext="{StaticResource DataManager}"
+            <ListView x:Name="MenuListView" Grid.Row="1" Grid.Column="0" 
                       ItemsSource="{Binding Path=MenuItems, FallbackValue='Invalid property', Mode=OneWay}" />            
-            <ListView x:Name="SelectedListView" Grid.Row="1" Grid.Column="2" DataContext="{StaticResource DataManager}"
+            <ListView x:Name="SelectedListView" Grid.Row="1" Grid.Column="2" 
                       ItemsSource="{Binding Path=CurrentlySelectedMenuItems, FallbackValue='Invalid property', Mode=OneWay}" />
         </Grid>
         
