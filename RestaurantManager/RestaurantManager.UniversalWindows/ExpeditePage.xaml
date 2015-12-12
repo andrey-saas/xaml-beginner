@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:RestaurantManager.UniversalWindows"
     xmlns:models="using:RestaurantManager.Models"
+    xmlns:extensions="using:Extensions"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -28,7 +29,18 @@
         <GridView Grid.Row="1" ItemsSource="{Binding OrderItems}">
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <Border CornerRadius="20" Margin="5,0,5,0" Background="Gray">
+                    <Border CornerRadius="20" Margin="5,0,5,0">
+                        <Border.Background>
+                            <SolidColorBrush>
+                                <SolidColorBrush.Color>
+                                    <Binding Path="Expedite">
+                                        <Binding.Converter>
+                                            <extensions:BoolToColorConverter TrueColor="Gray" FalseColor="Red" />
+                                        </Binding.Converter> 
+                                    </Binding>
+                                </SolidColorBrush.Color>
+                            </SolidColorBrush>
+                        </Border.Background>
                         <Grid MinHeight="300" Padding="10">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="0.6*" />
