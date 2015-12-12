@@ -11,6 +11,9 @@
     <Page.DataContext>
         <models:ExpediteDataManager />
     </Page.DataContext>
+    <Page.Resources>
+        <extensions:BoolToColorConverter x:Key="ColorConverter" TrueColor="Gray" FalseColor="Red" />
+    </Page.Resources>
     <Page.TopAppBar>
         <AppBar>
             <AppBarButton Label="Home" Click="MainPage_Click">
@@ -31,15 +34,7 @@
                 <DataTemplate>
                     <Border CornerRadius="20" Margin="5,0,5,0">
                         <Border.Background>
-                            <SolidColorBrush>
-                                <SolidColorBrush.Color>
-                                    <Binding Path="Expedite">
-                                        <Binding.Converter>
-                                            <extensions:BoolToColorConverter TrueColor="Gray" FalseColor="Red" />
-                                        </Binding.Converter> 
-                                    </Binding>
-                                </SolidColorBrush.Color>
-                            </SolidColorBrush>
+                            <SolidColorBrush Color="{Binding Path=Expedite, Converter={StaticResource ColorConverter}}" />
                         </Border.Background>
                         <Grid MinHeight="300" Padding="10">
                             <Grid.RowDefinitions>
