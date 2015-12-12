@@ -30,18 +30,19 @@ namespace Extensions
         public void Attach(DependencyObject associatedObject)
         {
             AssociatedObject = associatedObject;
-            if (AssociatedObject is UIElement)
+            if (AssociatedObject != null && AssociatedObject is UIElement)
                 (AssociatedObject as UIElement).RightTapped += RightClickMessageDialogBehavior_RightTapped;
+        }
+
+        public void Detach()
+        {
+            if (AssociatedObject != null && AssociatedObject is UIElement)
+                (AssociatedObject as UIElement).RightTapped -= RightClickMessageDialogBehavior_RightTapped;
         }
 
         private async void RightClickMessageDialogBehavior_RightTapped(object sender, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e)
         {
             await new MessageDialog(Message, Title).ShowAsync();
-        }
-
-        public void Detach()
-        {
-            throw new NotImplementedException();
         }
     }
 }
