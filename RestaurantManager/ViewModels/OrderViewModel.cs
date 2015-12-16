@@ -1,5 +1,6 @@
 ﻿using RestaurantManager.Models;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace RestaurantManager.ViewModels
 {
@@ -7,13 +8,13 @@ namespace RestaurantManager.ViewModels
     {
         private List<MenuItem> menuItems;
 
-        private List<MenuItem> currentlySelectedMenuItems;
+        private ObservableCollection<MenuItem> currentlySelectedMenuItems;
 
         protected override void OnDataLoaded()
         {
             this.MenuItems = Repository.StandardMenuItems;
 
-            this.CurrentlySelectedMenuItems = new List<MenuItem>
+            this.CurrentlySelectedMenuItems = new ObservableCollection<MenuItem>
             {
                 this.MenuItems[3],
                 this.MenuItems[5]
@@ -36,7 +37,7 @@ namespace RestaurantManager.ViewModels
             }
         }
 
-        public List<MenuItem> CurrentlySelectedMenuItems
+        public ObservableCollection<MenuItem> CurrentlySelectedMenuItems
         {
             get
             {
