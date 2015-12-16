@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using RestaurantManager.Models;
+using System.Collections.Generic;
 
-namespace RestaurantManager.Models
+namespace RestaurantManager.ViewModels
 {
-    public class OrderDataManager : DataManager
+    public sealed class OrderViewModel : ViewModel
     {
-        protected List<MenuItem> menuItems;
+        private List<MenuItem> menuItems;
 
-        protected List<MenuItem> currentlySelectedMenuItems;
+        private List<MenuItem> currentlySelectedMenuItems;
 
         protected override void OnDataLoaded()
         {
-            this.MenuItems = base.Repository.StandardMenuItems;
+            this.MenuItems = Repository.StandardMenuItems;
 
             this.CurrentlySelectedMenuItems = new List<MenuItem>
             {
@@ -30,7 +31,7 @@ namespace RestaurantManager.Models
                 if (menuItems != value)
                 {
                     menuItems = value;
-                    FirePropertyChanged();
+                    OnPropertyChanged();
                 }
             }
         }
@@ -46,7 +47,7 @@ namespace RestaurantManager.Models
                 if (currentlySelectedMenuItems != value)
                 {
                     currentlySelectedMenuItems = value;
-                    FirePropertyChanged();
+                    OnPropertyChanged();
                 }
             }
         }
