@@ -12,7 +12,7 @@ namespace RestaurantManager.ViewModels
 
         protected override void OnDataLoaded()
         {
-            this.MenuItems = Repository.StandardMenuItems;
+            this.MenuItems = Repository?.StandardMenuItems;
 
             this.CurrentlySelectedMenuItems = new ObservableCollection<MenuItem>
             {
