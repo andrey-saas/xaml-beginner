@@ -45,5 +45,15 @@ namespace RestaurantManager.Models
                 new Order { Complete = false, Expedite = false, SpecialRequests = String.Empty, Table = this.Tables.Last(), Items = new List<MenuItem> { this.StandardMenuItems.Last(), this.StandardMenuItems.First() } },
             };
         }
+
+        public int GetNextOrderId()
+        {
+            return Orders.Max((order) => order.Id) + 1;
+        }
+
+        public void AddOrder(Order order)
+        {
+            Orders.Add(order);
+        }
     }
 }

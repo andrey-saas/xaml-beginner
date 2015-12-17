@@ -21,9 +21,9 @@ namespace RestaurantManager.ViewModels
             LoadData();
         }
 
-        private async void LoadData()
+        private void LoadData()
         {
-            Repository = await RestaurantContextFactory.GetRestaurantContextAsync();
+            Repository = RestaurantContextFactory.GetRestaurantContext();
             OnDataLoaded();
         }
 
