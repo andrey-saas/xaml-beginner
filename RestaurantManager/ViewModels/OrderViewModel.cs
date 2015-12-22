@@ -8,10 +8,8 @@ namespace RestaurantManager.ViewModels
 {
     public sealed class OrderViewModel : ViewModel
     {
-        protected override void OnDataLoaded()
+        public OrderViewModel()
         {
-            this.MenuItems = Repository?.StandardMenuItems;
-
             this.CurrentlySelectedMenuItems = new ObservableCollection<MenuItem>();
 
             AddToOrderCommand = new DelegateCommand(AddToOrderAction, IsAddToOrderActionEnabled);
@@ -19,6 +17,16 @@ namespace RestaurantManager.ViewModels
 
             AddToOrderCommand.UpdateState();
             SubmitOrderCommand.UpdateState();
+        }
+
+        protected override bool IsDataLoaded()
+        {
+            return Repository != null && Repository.StandardMenuItems != null;
+        }
+
+        protected override void OnDataLoaded()
+        {
+            this.MenuItems = Repository?.StandardMenuItems;
         }
 
         private List<MenuItem> menuItems;
@@ -111,7 +119,7 @@ namespace RestaurantManager.ViewModels
 
         private bool IsSubmitOrderActionEnabled()
         {
-            return currentlySelectedMenuItems.Count > 0;
+            return currentlySelectedMenuItems != null && currentlySelectedMenuItems.Count > 0;
         }
     }
 }

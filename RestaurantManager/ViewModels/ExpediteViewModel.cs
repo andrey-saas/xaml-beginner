@@ -5,6 +5,11 @@ namespace RestaurantManager.ViewModels
 {
     public sealed class ExpediteViewModel : ViewModel
     {
+        protected override bool IsDataLoaded()
+        {
+            return Repository != null && Repository.Orders != null;
+        }
+
         protected override void OnDataLoaded()
         {
             OnPropertyChanged("OrderItems");
